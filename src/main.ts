@@ -15,7 +15,7 @@ searchBtn.addEventListener("click", async () => {
   }
 });
 
-const coinIds = ["bitcoin", "ethereum"];
+const coinIds = ["bitcoin", "ethereum", "polkadot"];
 const promises = coinIds.map((id) => CryptoService.getCoin(id));
 
 Promise.all(promises)
