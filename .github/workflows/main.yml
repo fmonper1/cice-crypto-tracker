@@ -14,3 +14,11 @@ jobs:
           min_length: 5 # Min length of the title
           max_length: 35 # Max length of the title
           github_token: ${{ github.token }} # Default: ${{ github.token }}
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install modules
+        run: yarn
+      - name: Run tests
+        run: yarn test
