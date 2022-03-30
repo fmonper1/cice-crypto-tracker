@@ -1,10 +1,11 @@
 {
   "name": "03_api",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "release": "standard-version"
   },
   "devDependencies": {
     "typescript": "^4.3.2",
