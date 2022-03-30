@@ -22,6 +22,7 @@ jobs:
       - name: Run tests
         run: yarn test
   notify:
+    runs-on: ubuntu-latest
     steps:
       - uses: dawidd6/action-send-mail@v3
         with:
