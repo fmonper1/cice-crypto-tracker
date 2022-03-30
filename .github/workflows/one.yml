@@ -1,0 +1,9 @@
+name: Mi primer workflow
+on: [pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - id: step-zero
+        run: |
+          echo "Hello World $(date)"
