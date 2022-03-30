@@ -2,8 +2,13 @@ name: Mi primer workflow
 on: [pull_request]
 jobs:
   build:
+    name: Hola Mundo
     runs-on: ubuntu-latest
     steps:
-      - id: step-zero
-        run: |
-          echo "Hello World $(date)"
+      - id: firstStep
+        name: Hello world
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: "World"
+      - name: Echo the time
+        run: echo 'The time was ${{ steps.firstStep.outputs.time }}'
