@@ -9,4 +9,11 @@ jobs:
           regex: '([a-z])+(:\s)([a-z])+' # Regex the title should match.
           allowed_prefixes: "feat,fix,chore,ci" # title should start with the
           github_token: ${{ github.token }} # Default: ${{ github.token }}
-  # ejecutar-los-tests:
+  ejecutar-los-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - user: action/checkout@v2
+      - name: Instalacion con npm
+        run: npm install
+      - name: Ejectuar los tests
+        run: npm run test
