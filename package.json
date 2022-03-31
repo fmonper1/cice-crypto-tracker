@@ -5,11 +5,20 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "release": "standard-version"
+    "release": "standard-version",
+    "test": "jest"
   },
   "devDependencies": {
     "typescript": "^4.3.2",
-    "vite": "^2.6.4"
+    "vite": "^2.6.4",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@testing-library/jest-dom": "^5.16.3",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^14.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.5.1"
   },
   "dependencies": {
     "standard-version": "^9.3.2"
