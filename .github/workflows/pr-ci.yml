@@ -1,0 +1,12 @@
+name: "PR - CI"
+on: [pull_request]
+jobs:
+  comprobar-titulo-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: deepakputhraya/action-pr-title@master
+        with:
+          regex: '([a-z])+(:\s)([a-z])+' # Regex the title should match.
+          allowed_prefixes: "feat,fix,chore,ci" # title should start with the
+          github_token: ${{ github.token }} # Default: ${{ github.token }}
+  # ejecutar-los-tests:
