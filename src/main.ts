@@ -1,5 +1,6 @@
 import "./style.css";
 import { CryptoService } from "./crypto.sevice";
+
 const app = document.querySelector<HTMLDivElement>("#display")!;
 const searchBtn = document.querySelector<HTMLButtonElement>("#search button")!;
 const searchResults =
@@ -8,6 +9,7 @@ const searchResults =
 searchBtn.addEventListener("click", async () => {
   try {
     const value = document.querySelector<HTMLInputElement>("#searchbox")?.value;
+
     const coinData = await CryptoService.getCoin(value);
     searchResults.replaceChildren(createShowcase(coinData));
   } catch (e) {
@@ -15,7 +17,7 @@ searchBtn.addEventListener("click", async () => {
   }
 });
 
-const coinIds = ["bitcoin", "polkadot"];
+const coinIds = ["bitcoin", "ethereum"];
 const promises = coinIds.map((id) => CryptoService.getCoin(id));
 
 Promise.all(promises)

@@ -5,10 +5,10 @@ jobs:
     name: Hola Mundo
     runs-on: ubuntu-latest
     steps:
-      - id: firstStep
-        name: Hello world
-        uses: actions/hello-world-javascript-action@v1
+      - name: Hello world action step
+        id: hello
+        uses: fmonper1/my-first-action@master
         with:
-          who-to-greet: "World"
+          who-to-greet: "Mona the Octocat"
       - name: Echo the time
         run: echo 'The time was ${{ steps.firstStep.outputs.time }}'
